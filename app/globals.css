@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #0e1316;
+  color: #e7ecee;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #293238 transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #293238;
+  border-radius: 8px;
+}
+
+.bg-topo {
+  background-color: #0e1316;
+  background-image:
+    radial-gradient(circle at 1px 1px, #232b30 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.cell-input {
+  @apply w-full bg-transparent px-2 py-1.5 text-sm text-ink outline-none placeholder:text-ink-faint rounded focus:bg-base-raised focus:ring-1 focus:ring-signal-cyan/40;
+}
+
+.cell-textarea {
+  @apply w-full resize-none bg-transparent px-2 py-1.5 text-sm text-ink outline-none placeholder:text-ink-faint rounded focus:bg-base-raised focus:ring-1 focus:ring-signal-cyan/40 leading-snug;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  flex: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #3fd6c4;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
